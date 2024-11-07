@@ -17,10 +17,19 @@ public class DataService {
         this.sessionFactory = sessionFactory;
     }
 
+    /**
+     * 1º Historia de Usuario
+     * @param p
+     */
     public void saveMovie(Pelicula p){
         sessionFactory.inTransaction(session -> session.persist(p));
     }
 
+    /**
+     * 2º Historia de Usuario
+     * @param correo
+     * @return
+     */
     public List<Opinion> opinionesUser(String correo){
         List<Opinion> listaOpiniones;
         try (Session session = sessionFactory.openSession()) {
@@ -33,6 +42,11 @@ public class DataService {
         return listaOpiniones;
     }
 
+    /**
+     * 3º Historia de usuario
+     * @param id
+     * @param opinion
+     */
     public void updateMovie(Long id, Opinion opinion){
         sessionFactory.inTransaction(session -> {
             var p = session.get(Pelicula.class, id);
@@ -41,10 +55,14 @@ public class DataService {
         });
     }
 
-    public List<Pelicula> listMoviesMore3(){
+    /**
+     * 4º Historia de Usuario
+     * @return
+     */
+    public List<Pelicula> listMoviesMoreRating(){
         List<Pelicula> listaPeliculas;
         try (Session session = sessionFactory.openSession()) {
-            Query<Pelicula> query = session.createQuery("select p from Opinion o join o.pelicula p where o.puntuacion > 3 ", Pelicula.class);
+            Query<Pelicula> query = session.createQuery("select p from Opinion o join o.pelicula p where o.puntuacion <= 3  ", Pelicula.class);
             listaPeliculas = query.list();
         }catch (Exception e){
             listaPeliculas = new ArrayList<>(0);

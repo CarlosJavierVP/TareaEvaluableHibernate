@@ -21,12 +21,16 @@ public class Main {
 
         Opinion op = new Opinion("Pelicula de humor parodiando al mesías","jaja@correo.com",10);
 
+        //3ºHistoria de usuario
         ds.updateMovie(6L, op);
 
-
-        ds.listMoviesMore3().forEach(System.out::println);
-
          */
+
+
+        //4º Historia de usuario
+        ds.listMoviesMoreRating().forEach(System.out::println);
+
+
 
 
 
