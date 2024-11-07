@@ -12,23 +12,23 @@ public class Main {
 
         DataService ds = new DataService(HibernateUtil.getSessionFactory());
 
-        /*
+
         Pelicula nuevaPeli = new Pelicula(null, "La vida de Brian",new ArrayList<>());
 
-        ds.saveMovie(nuevaPeli);
+        //1ºHistoria de usuario
+        //ds.saveMovie(nuevaPeli);
 
-        ds.opinionesUser("user1@example.com").forEach(System.out::println);
+        //2º Historia de usuario
+        //ds.opinionesUser("user1@example.com").forEach(System.out::println);
 
         Opinion op = new Opinion("Pelicula de humor parodiando al mesías","jaja@correo.com",10);
 
         //3ºHistoria de usuario
-        ds.updateMovie(6L, op);
-
-         */
+        //ds.updateMovie(6L, op);
 
 
         //4º Historia de usuario
-        ds.listMoviesMoreRating().forEach(System.out::println);
+        //ds.listMoviesMoreRating().forEach(System.out::println);
 
 
 
