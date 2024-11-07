@@ -57,7 +57,7 @@ public class DataService {
 
     /**
      * 4º Historia de Usuario
-     * @return
+     * @return lista de Películas con puntuación menor o igual que 3
      */
     public List<Pelicula> listMoviesMoreRating(){
         List<Pelicula> listaPeliculas;

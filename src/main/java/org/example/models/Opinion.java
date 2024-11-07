@@ -3,6 +3,9 @@ package org.example.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+/**
+ * Clase Opinion para valorar una Película
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,13 +27,22 @@ public class Opinion {
     private Pelicula pelicula;
 
 
-
+    /***
+     * Constructor de Opinion para instanciar una opinion con los parámetros que quiero
+     * @param descripcion
+     * @param usuario
+     * @param puntuacion
+     */
     public Opinion(String descripcion, String usuario, Integer puntuacion) {
         this.descripcion = descripcion;
         this.usuario = usuario;
         this.puntuacion = puntuacion;
     }
 
+    /**
+     * Metodo toString
+     * @return data
+     */
     @Override
     public String toString() {
         return "Opinion{" +

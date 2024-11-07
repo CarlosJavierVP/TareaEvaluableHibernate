@@ -3,10 +3,16 @@ package org.example;
 import org.example.models.Opinion;
 import org.example.models.Pelicula;
 import org.example.services.DataService;
-
 import java.util.ArrayList;
 
+/***
+ * Clase Main
+ */
 public class Main {
+    /**
+     * Metodo main
+     * @param args
+     */
     public static void main(String[] args) {
         //HibernateUtil.getSessionFactory();
 
